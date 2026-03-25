@@ -47,7 +47,7 @@ const Music = () => {
         {/* Bottom Brand */}
         <div className="music-brand">
           <div className="brand-logo">
-            <img src="../../../public/logo.jpeg" alt="logo" />
+            <img src="/logo.jpeg" alt="logo" />
             <div className="brand-text">
               <span>DE SONS</span>
               <span>VOICE</span>
