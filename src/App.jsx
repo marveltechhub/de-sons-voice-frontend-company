@@ -8,6 +8,7 @@ import Signup from './component/pages/SignUp'
 import Login from './component/pages/Login'
 import Dashboard from './component/pages/Dashboard'
 import ProtectedRoute from './component/pages/ProtectedRoute'
+import MusicianProfile from './component/pages/MusicianProfile'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route  path='/' element={<HomePage />}   />
           <Route  path='/discover' element={<Grow />}   />
+          <Route  path='/musician/:musicianName' element={<MusicianProfile />}   />
           <Route  path='/signup' element={<Signup />}   />
           <Route  path='/login' element={<Login />}   />
           <Route  path='/dashboard' element={<ProtectedRoute>
