@@ -1,0 +1,249 @@
+.music-section {
+  position: relative;
+  width: 100%;
+}
+
+.music-container {
+  background: linear-gradient(180deg, #0a0a1f 0%, #12122a 100%);
+  min-height: 80vh;
+  width: 100%;
+  padding: 60px 24px 80px;
+  color: white;
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+/* ===== SECTION HEADER ===== */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title-group {
+  text-align: left;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ===== CATEGORIES GRID ===== */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+}
+
+.category-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 28px;
+  text-align: center;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.category-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.category-card.worship::before {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), transparent);
+}
+
+.category-card.gospel::before {
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), transparent);
+}
+
+.category-card.praise::before {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), transparent);
+}
+
+.category-card.chant::before {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), transparent);
+}
+
+.category-card:hover::before {
+  opacity: 1;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.category-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.category-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.category-card p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.5;
+}
+
+/* ===== SCRIPTURE QUOTE ===== */
+.scripture-quote {
+  max-width: 700px;
+  margin: 60px auto;
+  text-align: center;
+  padding: 40px;
+  background: rgba(139, 92, 246, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 24px;
+  position: relative;
+}
+
+.quote-icon {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4rem;
+  color: rgba(139, 92, 246, 0.3);
+  line-height: 1;
+}
+
+.scripture-quote p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+  font-style: italic;
+}
+
+.quote-ref {
+  display: block;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #a78bfa;
+  font-weight: 600;
+}
+
+/* ===== MUSIC BRAND ===== */
+.music-brand {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-logo img {
+  height: 56px;
+  width: 56px;
+  border-radius: 14px;
+  border: 2px solid rgba(139, 92, 246, 0.4);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.2);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.brand-text span:first-child {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1.1;
+}
+
+.brand-text span:last-child {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 3px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .music-container {
+    padding: 40px 16px 60px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .category-card {
+    padding: 20px 16px;
+  }
+
+  .category-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+
+  .category-card h3 {
+    font-size: 1rem;
+  }
+
+  .category-card p {
+    font-size: 0.8rem;
+  }
+
+  .scripture-quote {
+    padding: 28px 20px;
+    margin: 40px 16px;
+  }
+
+  .scripture-quote p {
+    font-size: 1rem;
+  }
+
+  .quote-icon {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .categories-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
